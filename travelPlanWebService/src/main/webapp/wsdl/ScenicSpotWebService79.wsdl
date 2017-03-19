@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://scenicSpotWs.travelPlan.lsm.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://scenicSpotWs.travelPlan.lsm.com" xmlns:intf="http://scenicSpotWs.travelPlan.lsm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://scenicSpotWs.travelPlan.lsm.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getScenicSpotInfo">
+    <complexType/>
+   </element>
+   <element name="getScenicSpotInfoResponse">
+    <complexType>
+     <sequence>
+      <element name="getScenicSpotInfoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getScenicSpotInfoResponse">
+
+      <wsdl:part element="impl:getScenicSpotInfoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getScenicSpotInfoRequest">
+
+      <wsdl:part element="impl:getScenicSpotInfo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ScenicSpotWebService79">
+
+      <wsdl:operation name="getScenicSpotInfo">
+
+         <wsdl:input message="impl:getScenicSpotInfoRequest" name="getScenicSpotInfoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getScenicSpotInfoResponse" name="getScenicSpotInfoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ScenicSpotWebService79SoapBinding" type="impl:ScenicSpotWebService79">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getScenicSpotInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getScenicSpotInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getScenicSpotInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ScenicSpotWebService79Service">
+
+      <wsdl:port binding="impl:ScenicSpotWebService79SoapBinding" name="ScenicSpotWebService79">
+
+         <wsdlsoap:address location="http://localhost:8080/travelPlanWebService/services/ScenicSpotWebService79"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

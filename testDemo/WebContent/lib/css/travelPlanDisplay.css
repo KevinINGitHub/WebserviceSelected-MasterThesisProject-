@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+.global{
+	height:auto;    
+	 border: 1px solid;
+	  margin: 5px 5px 5px 5px;
+}
+.symbol{
+	 height: 50PX;   border: 1px solid; margin:5px 5px 5px 5px;
+}
+.searchMessage{
+	 height: 200PX;    border: 1px solid; margin: 5px 5px 5px 5px; 
+	text-align: center;
+}
+.niceF{
+	  height: 150PX;     border: 1px solid; margin-bottom:50px;
+}
+.travelMessage{
+	 height: 400PX;    border: 1px solid; margin: 5px 5px 5px 5px;
+}
+.scenicSpotList{
+	 width: 33%; height:98%;  float:left;  overflow:auto; border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.basicMess{
+	 width: 98%; height:120px ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+.image{
+	 width: 32%; height:98% ;  float:left; border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.abstract{
+	 width: 65%; height:98% ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+.mainMess{
+	 width: 68%; height:98% ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+.name{
+	 width: 98%; height:31% ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+.adress{
+	 width: 98%; height:33% ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+.auxIcon{
+	 width: 98%; height:30% ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+.price{
+	 width: 28%; height:98% ;  float:left; border: 1px solid;margin: 1px 1px 1px 1px;
+}
+
+.detail{
+	 width: 98%; height:120px ;  float:left; border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.expand{
+	 width: 98%; height:20px ;  float:left; text-align:right;border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.typeDetail{
+	 width: 98%; height:80% ;  float:left; border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.HotelDetailList{
+	 width: 33%; height:98%;   float:left; overflow:auto; border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.trainMessage{
+	 width: 32%; height:98%;   float:left; overflow:auto; border: 1px solid; margin: 1px 1px 1px 1px;
+}
+.bottom{
+	 height: 100PX;   border: 1px solid; margin: 5px 5px 5px 5px;
+}

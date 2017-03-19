@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://scenicSpotWs.ws.travelPlan.lsm.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://scenicSpotWs.ws.travelPlan.lsm.com" xmlns:intf="http://scenicSpotWs.ws.travelPlan.lsm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://scenicSpotWs.ws.travelPlan.lsm.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getSearchScenicSpotList">
+    <complexType>
+     <sequence>
+      <element name="destination" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSearchScenicSpotListResponse">
+    <complexType>
+     <sequence>
+      <element name="getSearchScenicSpotListReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getScenicSpotInfoList">
+    <complexType/>
+   </element>
+   <element name="getScenicSpotInfoListResponse">
+    <complexType>
+     <sequence>
+      <element name="getScenicSpotInfoListReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getScenicSpotInfoListRequest">
+
+      <wsdl:part element="impl:getScenicSpotInfoList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSearchScenicSpotListRequest">
+
+      <wsdl:part element="impl:getSearchScenicSpotList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getScenicSpotInfoListResponse">
+
+      <wsdl:part element="impl:getScenicSpotInfoListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSearchScenicSpotListResponse">
+
+      <wsdl:part element="impl:getSearchScenicSpotListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ScenicSpotWebServiceNew40">
+
+      <wsdl:operation name="getSearchScenicSpotList">
+
+         <wsdl:input message="impl:getSearchScenicSpotListRequest" name="getSearchScenicSpotListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSearchScenicSpotListResponse" name="getSearchScenicSpotListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getScenicSpotInfoList">
+
+         <wsdl:input message="impl:getScenicSpotInfoListRequest" name="getScenicSpotInfoListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getScenicSpotInfoListResponse" name="getScenicSpotInfoListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ScenicSpotWebServiceNew40SoapBinding" type="impl:ScenicSpotWebServiceNew40">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSearchScenicSpotList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSearchScenicSpotListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSearchScenicSpotListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getScenicSpotInfoList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getScenicSpotInfoListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getScenicSpotInfoListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ScenicSpotWebServiceNew40Service">
+
+      <wsdl:port binding="impl:ScenicSpotWebServiceNew40SoapBinding" name="ScenicSpotWebServiceNew40">
+
+         <wsdlsoap:address location="http://localhost:8080/travelPlanWebService/services/ScenicSpotWebServiceNew40"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+.global{
+	height:auto;    
+	 border: 1px solid;
+	  margin: 5px 5px 5px 5px;
+}
+.symbol{
+	 height: 60PX;   border: 1px solid; margin:5px 5px 5px 5px;
+}
+.botton{
+	/* height: 30PX;    border: 1px solid; margin: 5px 5px 5px 5px; */
+	text-align: center;
+}
+.result{
+	 height: 400PX;    border: 1px solid; margin: 5px 5px 5px 5px;
+}
+.bottom{
+	 height: 100PX;   border: 1px solid; margin: 5px 5px 5px 5px;
+}
+.wsButton{
+	width:50PX; height: 35px;  float:left; border: 1px solid; margin: 5px 5px 5px 5px;
+}
+.requirment{
+	 width: 38%; height:380px ;  float:left; border: 1px solid; margin: 5px 5px 5px 5px;
+}
+.detail{
+	 width: 60%; height:380px ;  float:left; border: 1px solid; margin: 5px 5px 5px 5px;
+}

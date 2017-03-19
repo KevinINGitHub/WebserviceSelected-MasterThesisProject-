@@ -1,0 +1,31 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ScenicSpotWebServiceNew86Service WSDL service -->
+
+  <service name="ScenicSpotWebServiceNew86" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://scenicSpotWs.ws.travelPlan.lsm.com"/>
+      <parameter name="wsdlServiceElement" value="ScenicSpotWebServiceNew86Service"/>
+      <parameter name="schemaQualified" value="http://scenicSpotWs.ws.travelPlan.lsm.com"/>
+      <parameter name="wsdlServicePort" value="ScenicSpotWebServiceNew86"/>
+      <parameter name="className" value="com.lsm.travelPlan.ws.scenicSpotWs.ScenicSpotWebServiceNew86SoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ScenicSpotWebServiceNew86"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getSearchScenicSpotList" qname="operNS:getSearchScenicSpotList" xmlns:operNS="http://scenicSpotWs.ws.travelPlan.lsm.com" returnQName="retNS:getSearchScenicSpotListReturn" xmlns:retNS="http://scenicSpotWs.ws.travelPlan.lsm.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:destination" xmlns:pns="http://scenicSpotWs.ws.travelPlan.lsm.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getScenicSpotInfoList" qname="operNS:getScenicSpotInfoList" xmlns:operNS="http://scenicSpotWs.ws.travelPlan.lsm.com" returnQName="retNS:getScenicSpotInfoListReturn" xmlns:retNS="http://scenicSpotWs.ws.travelPlan.lsm.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getScenicSpotInfoList getSearchScenicSpotList"/>
+
+  </service>
+</deployment>

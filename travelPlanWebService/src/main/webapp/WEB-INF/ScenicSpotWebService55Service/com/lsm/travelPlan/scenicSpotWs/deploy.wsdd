@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ScenicSpotWebService55Service WSDL service -->
+
+  <service name="ScenicSpotWebService55" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://scenicSpotWs.travelPlan.lsm.com"/>
+      <parameter name="wsdlServiceElement" value="ScenicSpotWebService55Service"/>
+      <parameter name="schemaQualified" value="http://scenicSpotWs.travelPlan.lsm.com"/>
+      <parameter name="wsdlServicePort" value="ScenicSpotWebService55"/>
+      <parameter name="className" value="com.lsm.travelPlan.scenicSpotWs.ScenicSpotWebService55"/>
+      <parameter name="wsdlPortType" value="ScenicSpotWebService55"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://scenicSpotWs.travelPlan.lsm.com" xmlns:retNS="http://scenicSpotWs.travelPlan.lsm.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getScenicSpotInfo" qname="operNS:getScenicSpotInfo" returnQName="retNS:getScenicSpotInfoReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="getScenicSpotInfo"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>js+css制作非常漂亮的web表单美化插件代码-xw素材网</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <script language="javascript" type="text/javascript" src="lib/FormBeautify/niceforms.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="lib/FormBeautify/niceforms-default.css" /> -->
+
+<script language="javascript" type="text/javascript">
+	//Add events
+	  NFInit(); 
+	  $("#wsDSubmit").click(function(){
+			searchWsInfoJpgrid();
+		});
+ 	  /* var existingLoadEvent = window.onload || function () {};
+var existingResizeEvent = window.onresize || function() {};
+window.onload = function () {
+    existingLoadEvent();
+    NFInit();
+}
+window.onresize = function() {
+	if(resizeTest != document.documentElement.clientHeight) {
+		existingResizeEvent();
+		NFFix();
+	}
+	resizeTest = document.documentElement.clientHeight;
+}   */
+</script>
+</head>
+
+<body><div id="container">
+<form action="#" method="post" class="niceform">
+	<fieldset>
+    	<legend>Discovery Info</legend> 
+    	<dl>
+        	<dt><label for="algorithm">wsType:</label></dt>
+            <dd>
+            	<select size="1" name="wsType" id="wsType">
+                    <option value="scenicSpotInfo">scenicSpotWs</option>
+                    <option value="starHotelInfo">starHotelWs</option>
+                    <option value="trainTicketInfo">TrainTicketWs</option>
+            	</select>
+            </dd>
+        </dl>
+        <dl>
+        	<dt><label for="wsNumber">wsNumber:</label></dt>
+            <dd><input type="text" name="wsNumber" id="wsNumber" size="5" value="50"/></dd>
+        </dl> 
+    </fieldset>
+   <fieldset>
+   	  <legend>Qos Limit</legend>
+        <dl>
+        	<dt><label for="scenicWs">price:</label></dt>
+            <dd><input type="text" name="priceMin" id="priceMin" size="5" value="55" /><input type="text" name="priceMax" id="priceMax" size="5" value="100" /></dd>
+        </dl> 
+        <dl>
+        	<dt><label for="scenicWs">responseTime:</label></dt>
+            <dd><input type="text" name="responseTimeMin" id="responseTimeMin" size="5" value="2" /><input type="text" name="responseTimeMax" id="responseTimeMax" size="5" value="5" /></dd>
+        </dl> 
+         <dl>
+        	<dt><label for="scenicWs">reliable:</label></dt>
+            <dd><input type="text" name="reliableMin" id="reliableMin" size="5" value="0.6" /><input type="text" name="reliableMax" id="reliableMax" size="5"  value="0.95"/></dd>
+        </dl> 
+          <dl>
+        	<dt><label for="scenicWs">availably:</label></dt>
+            <dd><input type="text" name="availablyMin" id="availablyMin" size="5"  value="0.8"/><input type="text" name="availablyMax" id="availablyMax" size="5"  value="0.98"/></dd>
+        </dl>  
+         <dl>
+        	<dt><!-- <label for="email">Current Position:</label> --></dt>
+            <dd><input type="button" name="wsDSubmit" id="wsDSubmit" value="*Find*" /></dd>
+        </dl>
+        <dl>
+        	<dt></dt>
+        	<dd></dd>
+        </dl>
+         <dl>
+        	<dt></dt>
+        	<dd></dd>
+        </dl>
+          <dl>
+        	<dt></dt>
+        	<dd></dd>
+        </dl>
+         <dl>
+        	<dt></dt>
+        	<dd></dd>
+        </dl>
+        <dl>
+        	<dt></dt>
+        	<dd></dd>
+        </dl>
+   </fieldset>
+   <!--  <fieldset class="action">
+    	<input type="submit" name="submit" id="submit" value="Submit" />
+    </fieldset> -->
+</form>
+<!-- <p id="footer">Niceforms v.2.0<br />&copy;Lucian Slatineanu - <a href="http://www.emblematiq.com/">Emblematiq</a><br />More script and css style
+: <a href="http://www.xwcms.net/" title="HTML DRIVE - Free DHMTL Scripts,Jquery plugins,Javascript,CSS,CSS3,Html5 Library">www.xwcms.net </a></p>
+ -->
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

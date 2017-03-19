@@ -1,0 +1,31 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from TrainTicketWebService98Service WSDL service -->
+
+  <service name="TrainTicketWebService98" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://trainTicketWs.travelPlan.lsm.com"/>
+      <parameter name="wsdlServiceElement" value="TrainTicketWebService98Service"/>
+      <parameter name="schemaQualified" value="http://trainTicketWs.travelPlan.lsm.com"/>
+      <parameter name="wsdlServicePort" value="TrainTicketWebService98"/>
+      <parameter name="className" value="com.lsm.travelPlan.trainTicketWs.TrainTicketWebService98SoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="TrainTicketWebService98"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getTrainTicketInfo" qname="operNS:getTrainTicketInfo" xmlns:operNS="http://trainTicketWs.travelPlan.lsm.com" returnQName="retNS:getTrainTicketInfoReturn" xmlns:retNS="http://trainTicketWs.travelPlan.lsm.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:from" xmlns:pns="http://trainTicketWs.travelPlan.lsm.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:to" xmlns:pns="http://trainTicketWs.travelPlan.lsm.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:date" xmlns:pns="http://trainTicketWs.travelPlan.lsm.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getTrainTicketInfo"/>
+
+  </service>
+</deployment>

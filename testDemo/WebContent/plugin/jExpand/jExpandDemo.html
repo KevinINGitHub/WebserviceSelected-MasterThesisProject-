@@ -1,0 +1,112 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Expand table rows with jQuery - jExpand plugin - JankoAtWarpSpeed demos</title>
+    <style type="text/css">
+        body { font-family:Arial, Helvetica, Sans-Serif; font-size:0.8em;}
+        #report { border-collapse:collapse;}
+        #report h4 { margin:0px; padding:0px;}
+        #report img { float:right;}
+        #report ul { margin:10px 0 10px 40px; padding:0px;}
+        #report th { background:#7CB8E2 url(/testDemo/plugin/jExpand/header_bkg.png) repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:center;}
+        #report td { background:#C7DDEE none repeat-x scroll center left; color:#000; padding:7px 15px; }
+        #report tr.odd td { background:#fff url(/testDemo/plugin/jExpand/row_bkg.png) repeat-x scroll center left; cursor:pointer; }
+        #report div.arrow { background:transparent url(/testDemo/plugin/jExpand/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+        #report div.up { background-position:0px 0px;}
+    </style>
+    <script language="javascript" type="text/javascript" src="/testDemo/lib/jquery/pggrid/jquery.min.js"></script> 
+    <script type="text/javascript" charset=UTF-8">  
+    
+        $(document).ready(function(){
+			
+        	TrainTicketFwsDisplay();
+          
+        });
+        
+        function TrainTicketFwsDisplay(){
+        	
+        	var currentP=$("#currentP").val();
+        	var destination=$("#destination").val();
+        	var dTime=$("#dYear").val()+'-'+$("#dMonth").val()+'-'+$("#dDay").val();
+        	var atTime=$("#atYear").val()+'-'+$("#atMonth").val()+'-'+$("#atDay").val();
+        	 $('#cloneTicketDetail').hide(); 
+       		 $.ajax({  
+                type:'get',      
+                url:'http://localhost:8080/travelPlanWebServiceClent/rest/trainTicketInfoFWs/trainTicketInfo',  
+                data:{from: currentP,to: destination,date: dTime},  
+                cache:false,  
+                dataType:'',  
+                success:function(data){
+            	 var trainTicketMess= eval("(" + data + ")");
+            
+            	console.log(trainTicketMess);
+            	var  cloneTrainTicket=$('#cloneTrainTicket');
+            	var  cloneTicketDetail=$('#cloneTicketDetail');
+            	$.each(trainTicketMess.data.trainList,function(index,item){
+            		var trainTicket=cloneTrainTicket.clone();
+            		var ticketDetail=cloneTicketDetail.clone();
+            		trainTicket.find("td").eq(0).html(item.trainNo);
+            		trainTicket.find("td").eq(1).html(item.from+"&nbsp<br>"+item.to);
+            		trainTicket.find("td").eq(2).html(item.startTime+"&nbsp<br>"+item.endTime);
+            		trainTicket.find("td").eq(3).html(item.duration);
+            		trainTicket.find("td").eq(4).html("有");
+            		
+            		trainTicket.insertAfter(cloneTrainTicket); 
+            		
+            		 $.each(item.seatInfos,function(index,itemSI){
+            			ticketDetail.find("p").after("<li>"+itemSI.seat+"&nbsp&nbsp&nbsp&nbsp"+itemSI.seatPrice+"&nbsp&nbsp&nbsp&nbsp"+itemSI.remainNum+"</li>");
+            		});  
+            		ticketDetail.insertAfter(cloneTrainTicket);
+            		});
+             	$('#cloneTrainTicket').hide(); 
+             	$('#cloneTicketDetail').hide(); 
+             	
+            	$("#report tr:odd").addClass("odd");
+               $("#report tr:not(.odd)").hide();
+               $("#report tr:first-child").show();
+               
+               $("#report tr.odd").click(function(){
+                   $(this).next("tr").toggle();
+                   $(this).find(".arrow").toggleClass("up");
+               });
+               
+                }
+                
+                
+            	});
+        }
+    </script>        
+</head>
+<body>
+    Train ticket 
+    <table id="report">
+        <tr>
+            <th style="text-align:center">车次</th>
+            <th style="text-align:center">始发站<br>终点站</th>
+            <th style="text-align:center">出发时间<br>到达时间</th>
+            <th style="text-align:center">时长</th>
+            <th>余票</th>
+            <th></th>
+        </tr>
+        <tr id="cloneTrainTicket">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><div class="arrow"></div></td>
+        </tr>
+        <tr id="cloneTicketDetail">
+            <td colspan="6">
+                <ul>
+                <p>类型&nbsp&nbsp&nbsp&nbsp&nbsp价格&nbsp&nbsp&nbsp剩余张数</p>
+                </ul>   
+            </td>
+        </tr>
+    
+    </table>
+</body>
+</html>

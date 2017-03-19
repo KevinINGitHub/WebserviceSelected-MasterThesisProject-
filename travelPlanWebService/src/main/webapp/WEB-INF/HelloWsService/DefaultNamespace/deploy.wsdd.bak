@@ -1,0 +1,34 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from HelloWsService WSDL service -->
+
+  <service name="HelloWs" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServiceElement" value="HelloWsService"/>
+      <parameter name="schemaQualified" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServicePort" value="HelloWs"/>
+      <parameter name="className" value="DefaultNamespace.HelloWsSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="HelloWs"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getScenicSpotInfoRev" qname="operNS:getScenicSpotInfoRev" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:getScenicSpotInfoRevReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:destination" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="sayHello" qname="operNS:sayHello" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:sayHelloReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getScenicSpotInfo1" qname="operNS:getScenicSpotInfo1" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:getScenicSpotInfo1Return" xmlns:retNS="http://DefaultNamespace" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getScenicSpotInfoRev getScenicSpotInfo1 sayHello"/>
+
+  </service>
+</deployment>

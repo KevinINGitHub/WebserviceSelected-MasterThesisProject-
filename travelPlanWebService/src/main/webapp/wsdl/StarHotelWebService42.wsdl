@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://starHotelWs.travelPlan.lsm.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://starHotelWs.travelPlan.lsm.com" xmlns:intf="http://starHotelWs.travelPlan.lsm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://starHotelWs.travelPlan.lsm.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getStarHotelInfo">
+    <complexType/>
+   </element>
+   <element name="getStarHotelInfoResponse">
+    <complexType>
+     <sequence>
+      <element name="getStarHotelInfoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getStarHotelInfoRequest">
+
+      <wsdl:part element="impl:getStarHotelInfo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStarHotelInfoResponse">
+
+      <wsdl:part element="impl:getStarHotelInfoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="StarHotelWebService42">
+
+      <wsdl:operation name="getStarHotelInfo">
+
+         <wsdl:input message="impl:getStarHotelInfoRequest" name="getStarHotelInfoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStarHotelInfoResponse" name="getStarHotelInfoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="StarHotelWebService42SoapBinding" type="impl:StarHotelWebService42">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getStarHotelInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStarHotelInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStarHotelInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="StarHotelWebService42Service">
+
+      <wsdl:port binding="impl:StarHotelWebService42SoapBinding" name="StarHotelWebService42">
+
+         <wsdlsoap:address location="http://localhost:8080/travelPlanWebService/services/StarHotelWebService42"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
